@@ -1,0 +1,41 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://bcvhk344p4qpr"]
+
+[ext_resource type="Shader" uid="uid://b6aa6gagwmc47" path="res://Assets/Shaders/ToonWater.gdshader" id="1_5fr73"]
+
+[sub_resource type="Gradient" id="Gradient_gc5hl"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fid46"]
+frequency = 0.0005
+offset = Vector3(-193.77, 0, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1hcw2"]
+noise = SubResource("FastNoiseLite_fid46")
+color_ramp = SubResource("Gradient_gc5hl")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="Gradient" id="Gradient_pajsb"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jowxt"]
+gradient = SubResource("Gradient_pajsb")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5fr73")
+shader_parameter/time_speed = 1.0
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("GradientTexture1D_jowxt")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1hcw2")
+shader_parameter/wave_height = 0.0
+shader_parameter/texture_height = 0.1
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)

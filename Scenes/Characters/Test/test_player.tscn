@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccrhusox713aw"]
+
+[ext_resource type="Script" uid="uid://csrnrkquerc3n" path="res://Scenes/Characters/Test/test_player.gd" id="1_bc0yq"]
+[ext_resource type="Script" uid="uid://vwjnjuuaewm7" path="res://Scripts/StateMachine/StateMachine.gd" id="2_omtf0"]
+[ext_resource type="Script" uid="uid://75hytphlddm5" path="res://Scripts/StateMachine/IdleState.gd" id="3_q7b84"]
+[ext_resource type="Script" uid="uid://d0n2at4iqhxfn" path="res://Scripts/StateMachine/FallState.gd" id="4_ipyi3"]
+[ext_resource type="Script" uid="uid://dslotl0p88503" path="res://Scripts/StateMachine/MoveState.gd" id="4_q7b84"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i75xr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bc0yq"]
+
+[node name="TestPlayer" type="CharacterBody3D"]
+script = ExtResource("1_bc0yq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_i75xr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bc0yq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74296963, 0)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("character", "initial_state")]
+script = ExtResource("2_omtf0")
+character = NodePath("..")
+initial_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://vwjnjuuaewm7"
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("3_q7b84")
+metadata/_custom_type_script = "uid://75hytphlddm5"
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("4_q7b84")
+metadata/_custom_type_script = "uid://dslotl0p88503"
+
+[node name="FallState" type="Node" parent="StateMachine"]
+script = ExtResource("4_ipyi3")
+metadata/_custom_type_script = "uid://d0n2at4iqhxfn"
