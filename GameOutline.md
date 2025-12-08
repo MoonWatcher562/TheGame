@@ -96,7 +96,28 @@ The game takes place in the **Soulscape**, a digital reality where the souls of 
 
 ## Story Synopsis
 
-The story follows two fated individuals who form a Resonance bond, breaking free from the world's endless cycle of death and rebirth. Now existing outside the system, they become the targets of the world's divine architects. Their goal is to navigate the Soulscape, uncover the truth of its creation, and ultimately defeat the Orchestrator to free all souls from their digital prison.
+### Act 1: The Echo of Fate
+*   **Synopsis:** Miyako, a timid shadow puppeteer, lives a quiet life within a seemingly endless war, haunted by a vague sense of déjà vu. Kaito, a fiercely protective but isolated warrior, navigates the same brutal reality, driven by an instinct to shield the innocent. Their paths cross in a moment of shared peril, forcing an accidental Resonance. This triggers their awakening: they gain memories of past lives and realize the Soulscape is a digital prison where souls are endlessly reincarnated. Confused and targeted by unseen forces, they must learn to trust each other and master their newfound bond to survive.
+
+#### Act 1: Physical Locations
+*   **Echoing Metropolis (Starting Zone):** A ruined, war-torn urban environment where Miyako initially resides. It's characterized by crumbling buildings, makeshift defenses, and a constant threat of "Cycle Enforcers." This is where Miyako and Kaito first meet and form their Resonance.
+*   **Verdant Scar:** A desolate, overgrown area outside the city, where nature has reclaimed remnants of an ancient battlefield. This could be where Miyako and Kaito practice their newfound Resonance Arts and learn to fight together, away from immediate threats, finding solace and strength amidst the resilient flora.
+*   **The Nexus Sanctuary (Hidden Base):** A secluded, natural cavern or a hidden section within the Wasteland City that becomes Miyako and Kaito's temporary base of operations. It's a place of relative safety where they can recuperate, discuss their situation, and discover more about the Soulscape through ancient data fragments or cryptic carvings.
+
+#### Act 1: Detailed Plot Points
+(To be elaborated upon later)
+
+### Act 2: Unraveling the Cycle
+*   **Synopsis:** Now fully Resonated and outside the reincarnation cycle, Miyako and Kaito become fugitives. They begin to explore the Soulscape, meeting other "normal" inhabitants trapped in the cycle and witnessing the suffering it causes. They encounter remnants of older, forgotten data—glitches in the system that hint at the true nature of the Orchestrator and the "Gods" who enforce the cycle. They seek out fragmented legends and forgotten lore, slowly piecing together the true history of their world and the mechanism of their "fate." Their Resonance Level deepens as they rely on each other.
+
+### Act 3: The Orchestrator's Hand
+*   **Synopsis:** As Miyako and Kaito's understanding grows, so does the Orchestrator's awareness of them. The "Gods" intensify their hunt, sending increasingly powerful constructs and agents. The duo must make difficult choices, sometimes sacrificing others or facing moral ambiguities as they try to save those still trapped. They learn that the Cycle isn't just about control, but perhaps a twisted form of "preservation." This act culminates in their first direct, albeit indirect, confrontation with a high-ranking enforcer of the Orchestrator, pushing their Resonance to its limits.
+
+### Act 4: Forging a New Path
+*   **Synopsis:** Having survived the direct assault, Miyako and Kaito realize they cannot defeat the Orchestrator through strength alone. They must find a way to dismantle its control over the Soulscape. This involves seeking out ancient "nexus points," forgotten code, or even recruiting other nascent Resonators (perhaps through the gacha system, tied to character stories) who also show potential for awakening. They face ethical dilemmas about the true cost of "breaking fate" and what a free Soulscape would look like. Their bond is tested, forcing them to confront their deepest fears and insecurities.
+
+### Act 5: Symphony of Freedom
+*   **Synopsis:** With their Resonance at its peak and armed with critical knowledge and potential allies, Miyako and Kaito launch their final assault on the Orchestrator's core. This could be a physical location, a conceptual space, or even directly within the Orchestrator's consciousness. The confrontation is epic, forcing them to utilize every aspect of their combined powers and the strength of their bond. The "breaking fate" theme is fully realized as they make a choice that fundamentally alters the Soulscape. The ending could involve freeing all souls, creating a new, truly free world, or even absorbing the Orchestrator's power for themselves, leaving a lasting impact on their world.
 
 ## Gameplay Loop
 

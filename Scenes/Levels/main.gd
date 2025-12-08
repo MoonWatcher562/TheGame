@@ -12,4 +12,9 @@ func _ready() -> void:
 	add_child(sb)
 	#endregion
 	
-	
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Escape"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if Input.is_action_just_pressed("Quit"):
+		get_tree().quit(0)

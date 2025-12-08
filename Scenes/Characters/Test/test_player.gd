@@ -1,9 +1,10 @@
 extends Entity
 
 
-var speed: float = 5.0
+@export var speed: float = 10.0
+@export var sprint_mult: float = 2.0
 
-var jump_height: float = 3.0
+@export var jump_height: float = 6.0
 var jumps: int = 0
 var max_jumps: int = 2
 
