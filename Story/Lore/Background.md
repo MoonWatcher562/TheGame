@@ -1,0 +1,5 @@
+[[The Soulscape]] was created in order to preserve the souls of humanity after a world ending apocalypse. 
+
+[[The Soulscape]] however was imperfect when it was implemented because it slowly caused insanity. (Caused by minds being inactive / unstimulated) [[The Orchestrator]] was made to correct this flaw and find some way to keep the human's minds active. [[The Orchestrator]] was given access to the [[World Console]] and full permission to implement whatever it decided. 
+
+[[The Orchestrator]] decided the only way to fix this fatal flaw was violence. Violence caused the emotional part of the mind to stay active and thus stave off the eventual insanity. [[The Orchestrator]] then implemented this into an eternal cycle of bloodshed where anyone who died would be wiped from the minds of all those who knew them and then reborn under the same name. 

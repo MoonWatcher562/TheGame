@@ -1,0 +1,235 @@
+{
+  "main": {
+    "id": "ac7668f19a16e28b",
+    "type": "split",
+    "children": [
+      {
+        "id": "23bf3dfc98a6f408",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9fa42fad39e80cec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Plot Outline.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Plot Outline"
+            }
+          },
+          {
+            "id": "8b4e618b0a9196ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Characters/Miyako.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Miyako"
+            }
+          },
+          {
+            "id": "69ba3afff8324cd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Characters/Kaito.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Kaito"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f9e9e6f4f3db7329",
+    "type": "split",
+    "children": [
+      {
+        "id": "5cda9200d29842fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "edd806630bd7d954",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7410e1192be4dbf1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "a44e6e4018c378c6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "35ddc54d1335e656",
+    "type": "split",
+    "children": [
+      {
+        "id": "1ebb40abb8f8a12a",
+        "type": "tabs",
+        "dimension": 41.96843082636955,
+        "children": [
+          {
+            "id": "8a8c52c1c1037715",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "793b1652514a13aa",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Characters/Kaito.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Kaito"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "0eb5140925fc6c8a",
+        "type": "tabs",
+        "dimension": 29.247910863509752,
+        "children": [
+          {
+            "id": "eef31c846268b0a7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Characters/Kaito.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Kaito"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2455664529778f6b",
+        "type": "tabs",
+        "dimension": 28.78365831012071,
+        "children": [
+          {
+            "id": "87130bdf90958227",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Characters/Kaito.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Kaito"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "69ba3afff8324cd6",
+  "lastOpenFiles": [
+    "New Text Document.txt",
+    "Characters/Miyako.md",
+    "Characters/Kaito.md",
+    "Combat.md",
+    "Plot Outline.md",
+    "Overview.md",
+    "Characters/The Orchestrator.md",
+    "Progress.md",
+    "Lore/Background.md",
+    "Lore/World Console.md",
+    "2026-01-01.md",
+    "Lore/The Soulscape.md",
+    "Lore",
+    "TheGame.md",
+    "GEMINI.md",
+    "Characters"
+  ]
+}

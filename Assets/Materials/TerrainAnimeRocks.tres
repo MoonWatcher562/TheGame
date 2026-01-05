@@ -1,0 +1,37 @@
+[gd_resource type="StandardMaterial3D" load_steps=9 format=3 uid="uid://igu3uhn5yyoa"]
+
+[ext_resource type="Texture2D" uid="uid://d2nd10dtixwia" path="res://Assets/Textures/ground_with_rocks_01_2k/ground_with_rocks_01_color_2k.png" id="1_oveny"]
+[ext_resource type="Texture2D" uid="uid://cwgas7qqevvx6" path="res://Assets/Textures/ground_with_rocks_01_2k/ground_with_rocks_01_ambient_occlusion_2k.png" id="2_obwkx"]
+[ext_resource type="Texture2D" uid="uid://dafkt8jnyun6v" path="res://Assets/Textures/ground_with_rocks_01_2k/ground_with_rocks_01_normal_dx_2k.png" id="3_q88gf"]
+[ext_resource type="Texture2D" uid="uid://cj2vyjmj1i2yr" path="res://Assets/Textures/ground_with_rocks_01_2k/ground_with_rocks_01_height_2k.png" id="4_s28u3"]
+[ext_resource type="Texture2D" uid="uid://dmqpltdtmali2" path="res://Assets/Textures/ground_with_rocks_01_2k/ground_with_rocks_01_normal_gl_2k.png" id="5_fs44b"]
+
+[sub_resource type="Gradient" id="Gradient_271is"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_063gg"]
+frequency = 0.0211
+offset = Vector3(333.33, 0, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qjapk"]
+noise = SubResource("FastNoiseLite_063gg")
+color_ramp = SubResource("Gradient_271is")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[resource]
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_oveny")
+normal_enabled = true
+normal_texture = ExtResource("5_fs44b")
+ao_enabled = true
+ao_texture = ExtResource("2_obwkx")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_s28u3")
+detail_enabled = true
+detail_mask = SubResource("NoiseTexture2D_qjapk")
+detail_blend_mode = 1
+detail_albedo = ExtResource("1_oveny")
+detail_normal = ExtResource("3_q88gf")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true

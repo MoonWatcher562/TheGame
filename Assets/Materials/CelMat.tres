@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dkdj1eupukn8g"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/Toon/outline.gdshader" id="1_grn2x"]
+[ext_resource type="Shader" uid="uid://b1jc5k12aysg0" path="res://Assets/Shaders/Toon/cel-shader-base.gdshader" id="2_pe6lk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qiobh"]
+render_priority = 0
+shader = ExtResource("1_grn2x")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_qiobh")
+shader = ExtResource("2_pe6lk")
+shader_parameter/color = Color(0.05882353, 0.45490196, 0.49411765, 1)
+shader_parameter/specular = Color(0, 0, 0, 1)
+shader_parameter/fresnel = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

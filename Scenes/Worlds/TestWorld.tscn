@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://ch6ihkmaxahqm"]
+
+[ext_resource type="PackedScene" uid="uid://csrwrwkykuvmd" path="res://Scenes/Characters/Duo.tscn" id="1_4c26r"]
+[ext_resource type="Script" uid="uid://d2r66qgqs3kje" path="res://Scripts/Worlds/TestWorld.gd" id="1_fkwt4"]
+[ext_resource type="Script" uid="uid://d13rk6w7lhwlo" path="res://Scripts/Object/DamageArea.gd" id="3_55hi0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkwt4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4c26r"]
+sky_material = SubResource("ProceduralSkyMaterial_fkwt4")
+
+[sub_resource type="Environment" id="Environment_v0jk3"]
+background_mode = 2
+sky = SubResource("Sky_4c26r")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oine3"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_44fen"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4c26r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkwt4"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 1, 0.30980393, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkwt4"]
+size = Vector3(6, 15, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_55hi0"]
+size = Vector3(6, 15, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0jk3"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.34509805, 0.28627452, 0.64705884)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oine3"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.30980393, 0.7019608, 0.28627452, 0.64705884)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_fkwt4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v0jk3")
+
+[node name="PlayerDuo" parent="." instance=ExtResource("1_4c26r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8242481, 0)
+
+[node name="Terrain" type="Node" parent="."]
+
+[node name="Plane" type="MeshInstance3D" parent="Terrain"]
+mesh = SubResource("PlaneMesh_oine3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/Plane"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Plane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_44fen")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6885486, -7.181687)
+mesh = SubResource("BoxMesh_4c26r")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fkwt4")
+
+[node name="Damage" type="Area3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.335129, 7.6588516, -15.780678)
+script = ExtResource("3_55hi0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Damage"]
+shape = SubResource("BoxShape3D_fkwt4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain/Damage"]
+mesh = SubResource("BoxMesh_55hi0")
+surface_material_override/0 = SubResource("StandardMaterial3D_v0jk3")
+
+[node name="Heal" type="Area3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9832916, 6.932603, -27.5662)
+script = ExtResource("3_55hi0")
+damage = -1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Heal"]
+shape = SubResource("BoxShape3D_fkwt4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Terrain/Heal"]
+mesh = SubResource("BoxMesh_55hi0")
+skeleton = NodePath("../../Damage")
+surface_material_override/0 = SubResource("StandardMaterial3D_oine3")

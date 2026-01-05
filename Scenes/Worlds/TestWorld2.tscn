@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://baghq13rso5ma"]
+
+[ext_resource type="PackedScene" uid="uid://ck6x7iqdbo582" path="res://Scenes/Characters/CharacterC.tscn" id="1_ddbvg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3nhmp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_55hi0"]
+sky_material = SubResource("ProceduralSkyMaterial_3nhmp")
+
+[sub_resource type="Environment" id="Environment_imu6q"]
+background_mode = 2
+sky = SubResource("Sky_55hi0")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r4vkk"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n5wfs"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qgly7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tsby"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 1, 0.30980393, 1)
+
+[node name="TestWorld2" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_imu6q")
+
+[node name="Terrain" type="Node" parent="."]
+
+[node name="Plane" type="MeshInstance3D" parent="Terrain"]
+mesh = SubResource("PlaneMesh_r4vkk")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/Plane"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Plane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_n5wfs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6885486, -7.181687)
+mesh = SubResource("BoxMesh_qgly7")
+surface_material_override/0 = SubResource("StandardMaterial3D_3tsby")
+
+[node name="CharacterC" parent="." instance=ExtResource("1_ddbvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4161681, 0)

@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://csrwrwkykuvmd"]
+
+[ext_resource type="Script" uid="uid://belpuink0b4rr" path="res://Scripts/Character/Duo.gd" id="1_sl7qa"]
+[ext_resource type="Script" uid="uid://dmrbk4x12q721" path="res://Scripts/Character/Character.gd" id="2_qeact"]
+[ext_resource type="Script" uid="uid://b7d4dc41s3cmv" path="res://Scripts/Character/DuoUI.gd" id="5_a41nj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sl7qa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ujq86"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0.79450697, 0.7966347, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qeact"]
+size = Vector3(0.65, 0.25, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qeact"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.20152658, 0.20152658, 0.20152658, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeact"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_qeact"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n38bl"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.69411767, 0.79607844, 1)
+
+[node name="Duo" type="Node3D" node_paths=PackedStringArray("active_character")]
+script = ExtResource("1_sl7qa")
+active_character = NodePath("CharacterA")
+
+[node name="CharacterA" type="CharacterBody3D" parent="." node_paths=PackedStringArray("partner")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+script = ExtResource("2_qeact")
+partner = NodePath("../CharacterB")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterA"]
+mesh = SubResource("CapsuleMesh_sl7qa")
+surface_material_override/0 = SubResource("StandardMaterial3D_ujq86")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterA/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.27)
+mesh = SubResource("BoxMesh_qeact")
+surface_material_override/0 = SubResource("StandardMaterial3D_qeact")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterA"]
+shape = SubResource("CapsuleShape3D_qeact")
+
+[node name="CameraPivot" type="Node3D" parent="CharacterA"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterA/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.845, 0)
+shape = SubResource("SeparationRayShape3D_qeact")
+spring_length = 7.3
+
+[node name="Camera3D" type="Camera3D" parent="CharacterA/CameraPivot/SpringArm3D"]
+
+[node name="CharacterB" type="CharacterBody3D" parent="." node_paths=PackedStringArray("partner")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+script = ExtResource("2_qeact")
+partner = NodePath("../CharacterA")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterB"]
+mesh = SubResource("CapsuleMesh_sl7qa")
+skeleton = NodePath("../../CharacterA")
+surface_material_override/0 = SubResource("StandardMaterial3D_n38bl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterB/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.27)
+mesh = SubResource("BoxMesh_qeact")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterB"]
+shape = SubResource("CapsuleShape3D_qeact")
+
+[node name="CameraPivot" type="Node3D" parent="CharacterB"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterB/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.845, 0)
+shape = SubResource("SeparationRayShape3D_qeact")
+spring_length = 7.3
+
+[node name="Camera3D" type="Camera3D" parent="CharacterB/CameraPivot/SpringArm3D"]
+
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("duo")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("5_a41nj")
+duo = NodePath("..")
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.57021606
+offset_left = 43.0
+offset_top = -11.5
+offset_right = 284.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Health: "
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = 20.5
+offset_right = 220.0
+offset_bottom = 47.5
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
